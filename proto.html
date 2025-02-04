@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Landing Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .bg-container {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .navbar {
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .head {
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeInDown 1s;
+        }
+        .para {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        .ccard {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .ccard:hover {
+            transform: scale(1.05);
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
+        <a class="navbar-brand" href="#">Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aboutus">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="home" class="bg-container text-white" style="background: url('https://source.unsplash.com/1600x900/?business,technology,innovation') no-repeat center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <h1 class="head">Welcome to Our Landing Page</h1>
+        <p class="para">We provide top-notch services to cater to all your needs. From delivery to specialized services, we are here to help you.</p>
+    </div>
+    
+    <div id="aboutus" class="bg-container">
+        <h1 class="head">ABOUT US</h1>
+        <p class="para">Meet Our Team</p>
+        <div class="d-flex justify-content-center">
+            <div class="ccard text-center mx-3">
+                <img src="https://via.placeholder.com/100" class="rounded-circle" alt="Member" />
+                <p class="para">Ms. K. Angelina</p>
+            </div>
+            <div class="ccard text-center mx-3">
+                <img src="https://via.placeholder.com/100" class="rounded-circle" alt="Member" />
+                <p class="para">Mr. J. Smith</p>
+            </div>
+            <div class="ccard text-center mx-3">
+                <img src="https://via.placeholder.com/100" class="rounded-circle" alt="Member" />
+                <p class="para">Ms. A. Johnson</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="services" class="bg-container">
+        <h1 class="head">Our Services</h1>
+        <p class="para">We offer a range of services including:</p>
+        <ul>
+            <li>Fast and reliable delivery</li>
+            <li>Quality customer support</li>
+            <li>Customized solutions for businesses</li>
+        </ul>
+    </div>
+
+    <div id="contact" class="bg-container">
+        <h1 class="head">Contact Us</h1>
+        <form>
+            <input type="text" placeholder="Your Name" class="form-control mb-3">
+            <input type="email" placeholder="Your Email" class="form-control mb-3">
+            <textarea placeholder="Your Message" class="form-control mb-3"></textarea>
+            <button class="btn btn-warning">Send Message</button>
+        </form>
+    </div>
+    
+    <footer class="bg-dark text-white text-center p-3">
+        <p>Follow Us:</p>
+        <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#" class="text-white"><i class="fab fa-google"></i> Google</a>
+        <p>&copy; 2025 Our Brand. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        gsap.from(".head", { opacity: 0, y: -50, duration: 1, ease: "bounce.out" });
+        gsap.from(".ccard", { opacity: 0, scale: 0.5, duration: 1, delay: 0.5, ease: "elastic.out(1, 0.5)" });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
